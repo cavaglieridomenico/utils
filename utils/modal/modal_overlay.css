@@ -1,0 +1,38 @@
+/* To be placed at the end of the container element.
+The container element must be in position: relative;  */
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #000000c0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 600px;
+  height: 400px;
+  margin-bottom: 20em;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Close button */
+.modal-container span {
+  position: absolute;
+  z-index: 2;
+  top: 1em;
+  right: 1em;
+  cursor: pointer;
+}
+
+.modal-container span:hover {
+  transform: scale(1.1);
+  transition: all 0.1s linear;
+}
+/* End Close button */
