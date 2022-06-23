@@ -22,8 +22,8 @@ export const getGreeting = (time) => {
   return "Buonanotte";
 };
 
-export const getMonth = (mounth) => {
-  switch (mounth) {
+export const getMonth = (month) => {
+  switch (month) {
     case 0:
       return "Gennaio";
     case 1:
@@ -52,3 +52,12 @@ export const getMonth = (mounth) => {
       "";
   }
 };
+
+//This returns an object with the current date and time
+function currentDate() {
+  let dates = new Date();
+  dates.time = dates.toLocaleTimeString();
+  dates.date = dates.toLocaleDateString();
+  return dates;
+}
+export { currentDate };
