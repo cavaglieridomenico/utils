@@ -1,6 +1,6 @@
 # Collection of Frontend Dev Utilities
 
-- Low-level abstraction functions, written in JavaScript.
+- Low-level abstraction functions, written in JavaScript or TypeScript with tests.
 - Original HTMLElement with related functions for DOM manipulation.
 
 ## :pushpin: Requirements
@@ -15,4 +15,10 @@ $ choose the root folder
 
 # Install dependencies
 $ npm install
+
+# Run test once
+$ npm run test
+
+# Run test watch
+$ npm run testW
 ```
