@@ -41,4 +41,9 @@ test("Get the recipe appliance", () => {
       "filters dishes=primi e secondi&filters dishes=antipasti&filters appliances=forno"
     )
   ).toBe("forno");
+  expect(
+    getRecipeAppliance(
+      "filters dishes=primi e secondi&filters dishes=antipasti&filters appliances=il mio forno"
+    )
+  ).toBe("il mio forno");
 });
