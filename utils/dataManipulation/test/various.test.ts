@@ -8,10 +8,14 @@ const getStatus = (value?: any) => {
   }
 };
 
+const myObj = {};
+
 test("", () => {
   expect(getStatus([])).toBe("exists");
   expect(getStatus()).toBe("does not exist");
   expect(getStatus({})).toBe("exists");
+  expect(getStatus(myObj)).toBe("exists");
+  expect(getStatus(Object.keys(myObj).length !== 0)).toBe("does not exist");
 });
 
 const getStatus2 = (value?: any) => {
