@@ -1,6 +1,6 @@
 import { expect, test } from "@jest/globals";
 
-/*Array without duplicates*/
+/*Array without duplicates - Start*/
 const getListWithoutDuplicate = (list: string[]) => Array.from(new Set(list));
 
 test("Array without duplicates", () => {
@@ -9,8 +9,9 @@ test("Array without duplicates", () => {
     "dog",
   ]);
 });
+/*Array without duplicates - End*/
 
-/*New list of Objects*/
+/*New list of Objects - */
 const list = [{ pet: "Cat" }, { pet: "Dog" }, { pet: "Rabbit" }];
 
 const getNewList = (list) =>
@@ -26,8 +27,9 @@ test("New list of Objects", () => {
     { newPet: "Rabbit", location: "Home" },
   ]);
 });
+/*New list of Objects - End*/
 
-/*New list of Objects*/
+/*Guess word - Start*/
 const guessedLetters = ["c", "a", "t"];
 
 const isRightWord = (list: string[], wordToGuess: string): boolean => {
@@ -54,4 +56,26 @@ test("Check guessed word", () => {
   expect(isRightWord(["j", "f", "l", "r", "a", "t"], "flat")).toStrictEqual(
     true
   );
+});
+/*Guess word - End*/
+
+const cutList = (list: number[], index: number) => {
+  list.splice(index + 1, list.length - index);
+  return list;
+};
+
+test("Check cut list", () => {
+  expect(cutList([0, 1, 2, 3, 4], 2)).toStrictEqual([0, 1, 2]);
+});
+
+test("Check cut list", () => {
+  expect(cutList([0, 1, 2, 3, 4], 3)).toStrictEqual([0, 1, 2, 3]);
+});
+
+test("Check cut list", () => {
+  expect(cutList([0, 1, 2, 3, 4, 5], 2)).toStrictEqual([0, 1, 2]);
+});
+
+test("Check cut list", () => {
+  expect(cutList([0, 1, 2, 3, 4, 5], 5)).toStrictEqual([0, 1, 2, 3, 4, 5]);
 });
