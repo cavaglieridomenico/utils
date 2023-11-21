@@ -35,25 +35,25 @@ const getTictactoeWinner = (
   }
 };
 
-test("Array without duplicates", () => {
+test("Get Tic tac toe winner", () => {
   expect(
     getTictactoeWinner(["x", null, "x", "x", null, "x", null, null, "o"])
   ).toEqual(undefined);
 });
 
-test("Array without duplicates", () => {
+test("Get Tic tac toe winner", () => {
   expect(
     getTictactoeWinner(["x", null, "x", "x", null, "x", "x", "o", "o"])
   ).toEqual("x");
 });
 
-test("Array without duplicates", () => {
+test("Get Tic tac toe winner", () => {
   expect(
     getTictactoeWinner(["x", null, "x", "x", null, "x", "o", "o", "o"])
   ).toEqual("o");
 });
 
-test("Array without duplicates", () => {
+test("Get Tic tac toe winner", () => {
   expect(
     getTictactoeWinner(["x", "o", "o", "x", "o", "x", "o", "o", "x"])
   ).toEqual("o");

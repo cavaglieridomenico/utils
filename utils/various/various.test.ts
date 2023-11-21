@@ -59,9 +59,9 @@ test("Check guessed word", () => {
 });
 /*Guess word - End*/
 
+/*Cut list - Start*/
 const cutList = (list: number[], index: number) => {
-  list.splice(index + 1, list.length - index);
-  return list;
+  return list.slice(0, index + 1);
 };
 
 test("Check cut list", () => {
@@ -79,3 +79,4 @@ test("Check cut list", () => {
 test("Check cut list", () => {
   expect(cutList([0, 1, 2, 3, 4, 5], 5)).toStrictEqual([0, 1, 2, 3, 4, 5]);
 });
+/*Cut list - End*/
