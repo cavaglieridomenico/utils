@@ -38,7 +38,7 @@ test("Get extension", () => {
 
 /*Return a string with the next character in the alphabet*/
 
-const getNewWorld = (word: string): string =>
+const getNewWord = (word: string): string =>
   word
     .split("")
     .map((character) => {
@@ -48,17 +48,41 @@ const getNewWorld = (word: string): string =>
     .join("");
 
 test("Get extension", () => {
-  expect(getNewWorld("dog")).toStrictEqual("eph");
+  expect(getNewWord("dog")).toStrictEqual("eph");
 });
 
 test("Get extension", () => {
-  expect(getNewWorld("cat")).toStrictEqual("dbu");
+  expect(getNewWord("cat")).toStrictEqual("dbu");
 });
 
 test("Get extension", () => {
-  expect(getNewWorld("zorro")).toStrictEqual("pssp");
+  expect(getNewWord("zorro")).toStrictEqual("pssp");
 });
 
 test("Get extension", () => {
-  expect(getNewWorld("zzz")).toStrictEqual("");
+  expect(getNewWord("zzz")).toStrictEqual("");
+});
+
+/*Return a string with the word "New! " at the beginning*/
+
+const getNewWord2 = (word: string) =>
+  /^New! /.test(word) ? word : `New! ${word}`;
+
+test("Get extension", () => {
+  expect(getNewWord2("Dog")).toStrictEqual("New! Dog");
+});
+
+test("Get extension", () => {
+  expect(getNewWord2("New! Dog")).toStrictEqual("New! Dog");
+});
+
+const getNewWord3 = (word: string) =>
+  word.indexOf("New! ") === 0 ? word : `New! ${word}`;
+
+test("Get extension", () => {
+  expect(getNewWord3("Dog")).toStrictEqual("New! Dog");
+});
+
+test("Get extension", () => {
+  expect(getNewWord3("New! Dog")).toStrictEqual("New! Dog");
 });
