@@ -59,3 +59,57 @@ const getNumberOfCoins = (amount, coins = [25, 10, 5, 2, 1]) => {
 };
 
 console.log(getNumberOfCoins(100, [25, 10, 5, 2, 1]));
+
+export const getSalaryAverage2 = (peopleList) =>
+  peopleList.reduce((acc, person) => {
+    acc += +person.salary;
+    return acc;
+  }, 0) / peopleList.length;
+
+const people = [
+  {
+    firstName: "Terri",
+    lastName: "Bishop",
+    DOB: "02/04/1989",
+    department: "Development",
+    salary: "35000",
+  },
+  {
+    firstName: "Sam",
+    lastName: "Hughes",
+    DOB: "07/07/1978",
+    department: "Development",
+    salary: "45000",
+  },
+  {
+    firstName: "Sam",
+    lastName: "Hughes",
+    DOB: "07/07/1998",
+    department: "Development",
+    salary: "45000",
+  },
+  {
+    firstName: "Sam",
+    lastName: "Hughes",
+    DOB: "07/07/1985",
+    department: "Development",
+    salary: "45000",
+  },
+];
+
+console.log(getSalaryAverage2(people));
+
+export const getSalaryAverage = (peopleList) =>
+  peopleList.reduce(
+    (acc, person) => acc + +person.salary / peopleList.length,
+    0
+  );
+
+console.log(getSalaryAverage(people));
+
+const getOrderedPeople = (peopleList) =>
+  peopleList
+    .slice()
+    .sort((a, b) => new Date(b.DOB).getTime() - new Date(a.DOB).getTime());
+
+console.log(getOrderedPeople(people));
